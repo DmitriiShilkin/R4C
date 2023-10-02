@@ -1,0 +1,19 @@
+{% extends 'default.html' %}
+
+{% block title %}
+	Main
+{% endblock title %}
+
+{% block content %}
+    <h3>Тестовое задание.
+        <a href="https://t.me/shilkinde">Шилкин Дмитрий</a>
+    </h3>
+	<hr>
+    <ol class="inline-list" style="list-style: none; text-align: left;">
+        <li>
+            <a href="{% url 'stats' %}">Задание 2. Скачать Excel-файл со сводкой по суммарным показателям производства
+                роботов за последнюю неделю</a><br>
+        </li>
+    </ol>
+
+{% endblock content %}

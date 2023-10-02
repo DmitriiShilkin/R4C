@@ -15,15 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.generic import TemplateView
 
-from robots.views import RobotsAPIView
+from robots.views import index_view, stats_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(
-        template_name='swagger-ui.html',
-        extra_context={'schema_url': 'openapi-schema'}
-    ), name='swagger-ui'),
-    path('api/robots/', RobotsAPIView.as_view(), name='robots'),
+    path('', index_view, name='index'),
+    path('stats/', stats_view, name='stats'),
 ]
