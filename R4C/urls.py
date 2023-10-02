@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from robots.views import index_view, stats_view
+from robots.views import index_view
+from orders.views import OrderView, order_success_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view, name='index'),
-    path('stats/', stats_view, name='stats'),
+    path('order/', OrderView.as_view(), name='order'),
+    path('order/success/', order_success_view, name='order_success')
 ]

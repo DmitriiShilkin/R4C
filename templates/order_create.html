@@ -1,0 +1,16 @@
+{% extends 'default.html' %}
+
+{% block title %}
+    Order
+{% endblock title %}
+
+{% block content %}
+    <h2>Отправка заказа</h2>
+    <hr>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="action" value="Подтвердить" />
+    </form>
+
+{% endblock content %}

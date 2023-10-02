@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'robots',
+    'customers',
+    'orders.apps.OrdersConfig',
+    'robots'
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,15 @@ SITE_ID = 1
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# константы для работы с почтой
+EMAIL_HOST = 'smtp.mail.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+
+# в режиме отладки можно отправлять почту не через реальный почтовый сервер, а в консоль
+# if DEBUG:
+#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

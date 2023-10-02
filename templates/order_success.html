@@ -1,0 +1,17 @@
+{% extends 'default.html' %}
+
+{% block title %}
+	Success
+{% endblock title %}
+
+{% block content %}
+	{% if exists %}
+		<br>
+		<p>Ваша заявка принята.</p>
+	{% else %}
+		<br>
+		<p>К сожалению, на данный момент робот модели {{ model }}, версии {{ version }} не доступен.</p>
+		<p>Как только он появится в наличии, мы Вам сообщим.</p>
+	{% endif %}
+
+{% endblock content %}
